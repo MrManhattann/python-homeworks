@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин товарів</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <a href="/" class="logo">MyStore</a>
+        <span>Інтернет-магазин</span>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Наші товари</h1>
+    <p class="subtitle">Обирайте товари, які вам подобаються</p>
+
+    <div class="products">
+        {% for product in products %}
+            <a href="{{ url_for('product_detail', product_id=product.id) }}"
+               class="product-card">
+
+                <img src="{{ product.image }}" alt="{{ product.title }}">
+
+                <div class="product-info">
+                    <h2>{{ product.title }}</h2>
+                    <p class="rating">★ {{ product.rating }}</p>
+                    <p class="price">{{ product.price }} грн</p>
+                    <span class="details">Переглянути товар →</span>
+                </div>
+
+            </a>
+        {% endfor %}
+    </div>
+</main>
+
+</body>
+</html>

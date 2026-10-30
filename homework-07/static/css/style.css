@@ -1,0 +1,154 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #222;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.header {
+    background: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 35px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #2864dc;
+    text-decoration: none;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-info h2 {
+    font-size: 19px;
+    margin-top: 0;
+}
+
+.rating {
+    color: #e6a400;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2864dc;
+}
+
+.details {
+    color: #555;
+    font-size: 14px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #2864dc;
+    text-decoration: none;
+}
+
+.detail-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 40px;
+}
+
+.detail-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.detail-info {
+    align-self: center;
+}
+
+.description {
+    color: #666;
+    line-height: 1.6;
+}
+
+.buy-button {
+    border: none;
+    background: #2864dc;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background: #174bb5;
+}
+
+@media (max-width: 650px) {
+    .detail-card {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-card img {
+        height: 250px;
+    }
+}

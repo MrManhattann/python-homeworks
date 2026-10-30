@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <a href="/" class="logo">MyStore</a>
+        <span>Інтернет-магазин</span>
+    </div>
+</header>
+
+<main class="container">
+    <a href="{{ url_for('index') }}" class="back-link">
+        ← Повернутися до товарів
+    </a>
+
+    <div class="detail-card">
+        <img src="{{ product.image }}" alt="{{ product.title }}">
+
+        <div class="detail-info">
+            <h1>{{ product.title }}</h1>
+
+            <p class="rating">★ Рейтинг: {{ product.rating }}</p>
+
+            <p class="price">{{ product.price }} грн</p>
+
+            <p class="description">
+                Детальна картка товару нашого інтернет-магазину.
+            </p>
+
+            <button class="buy-button" type="button">
+                Купити
+            </button>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
