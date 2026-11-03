@@ -1,0 +1,155 @@
+
+{% extends "main/layout.html" %}
+
+{% block title %}Персональне CV | Максим{% endblock %}
+
+{% block content %}
+
+<!-- Особиста інформація -->
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-body p-4">
+        <div class="row align-items-center">
+            <div class="col-md-3 text-center mb-3 mb-md-0">
+                <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"
+                    alt="Фото профілю"
+                    class="profile-photo"
+                >
+            </div>
+
+            <div class="col-md-9 text-center text-md-start">
+                <h1 class="fw-bold">Максим [Яворський]</h1>
+                <h4 class="text-primary">Junior Python Developer</h4>
+
+                <p class="text-muted mb-2">
+                    <i class="bi bi-geo-alt"></i>
+                    Місто: [Вінниця]
+                </p>
+
+                <p class="mb-1">
+                    Email:
+                    <a href="mailto:your.email@example.com">
+                        your.email@example.com
+                    </a>
+                </p>
+
+                <p class="mb-0">
+                    Телефон: +380 XX XXX XX XX
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Про себе -->
+<section id="about" class="card shadow-sm border-0 mb-4">
+    <div class="card-body p-4">
+        <h2 class="section-title">Про себе</h2>
+
+        <p>
+            Я початківець Python Developer, який вивчає програмування
+            та веброзробку. Працюю над навчальними проєктами,
+            розвиваю навички написання чистого та зрозумілого коду.
+        </p>
+
+        <h5>Особисті якості</h5>
+        <p>
+            Відповідальність, уважність до деталей, наполегливість,
+            бажання навчатися, уміння працювати самостійно та в команді.
+        </p>
+
+        <h5>Професійна мета</h5>
+        <p class="mb-0">
+            Отримати позицію Junior Python Developer, застосовувати
+            набуті знання на практиці та розвиватися у сфері backend-розробки.
+        </p>
+    </div>
+</section>
+
+<!-- Освіта -->
+<section id="education" class="card shadow-sm border-0 mb-4">
+    <div class="card-body p-4">
+        <h2 class="section-title">Освіта</h2>
+
+        <h5>[ДОНУ]</h5>
+        <p class="mb-1">Спеціальність: [Комп'ютерні науки]</p>
+        <p class="text-muted mb-0">Роки навчання: [2022] – [2025]</p>
+    </div>
+</section>
+
+<!-- Навички -->
+<section id="skills" class="card shadow-sm border-0 mb-4">
+    <div class="card-body p-4">
+        <h2 class="section-title">Навички</h2>
+
+        <h5>Мови програмування та технології</h5>
+        <div class="mb-3">
+            <span class="badge bg-primary skill-badge">Python</span>
+            <span class="badge bg-primary skill-badge">Django</span>
+            <span class="badge bg-primary skill-badge">Flask</span>
+            <span class="badge bg-primary skill-badge">HTML</span>
+            <span class="badge bg-primary skill-badge">CSS</span>
+            <span class="badge bg-primary skill-badge">Bootstrap</span>
+            <span class="badge bg-primary skill-badge">SQL</span>
+        </div>
+
+        <h5>Комп'ютерні програми</h5>
+        <p>
+            PyCharm, Visual Studio Code, Git, GitHub, Docker.
+        </p>
+
+        <h5>Іноземні мови</h5>
+        <p class="mb-0">
+            Українська — рідна; англійська — [Ваш рівень].
+        </p>
+    </div>
+</section>
+
+<!-- Навчальні проєкти -->
+<section id="projects" class="mb-4">
+    <h2 class="section-title">Навчальні проєкти</h2>
+
+    <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+            <div class="card project-card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title">Інтернет-магазин</h5>
+                    <p class="text-muted">Python, Flask, HTML, CSS</p>
+                    <p class="card-text">
+                        Вебзастосунок зі списком товарів та окремими
+                        сторінками товарів. Реалізовано модель продукту
+                        та отримання товарів за ID.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card project-card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title">Django вебсайт</h5>
+                    <p class="text-muted">Python, Django, HTML</p>
+                    <p class="card-text">
+                        Навчальний сайт із маршрутизацією,
+                        views та шаблонами Django.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card project-card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title">Python ООП</h5>
+                    <p class="text-muted">Python</p>
+                    <p class="card-text">
+                        Навчальні програми з класами, успадкуванням,
+                        міксінами, магічними методами та роботою з об'єктами.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
