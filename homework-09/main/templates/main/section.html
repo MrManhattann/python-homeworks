@@ -1,0 +1,237 @@
+
+{% extends "main/base.html" %}
+
+{% block title %}{{ title }} | Вінниця{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-lg-11">
+
+        <div class="card content-card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+
+                <h1 class="section-title mb-3">
+                    {{ title }}
+                </h1>
+
+                <p class="lead">
+                    {{ description }}
+                </p>
+
+                {% if title == "Ласкаво просимо до Вінниці!" %}
+                    <img
+                        src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1400"
+                        alt="Міський краєвид"
+                        class="img-fluid rounded shadow-sm w-100 mb-4"
+                        style="max-height: 430px; object-fit: cover;"
+                    >
+                {% endif %}
+
+                {% if title == "Цікаві факти про Вінницю" %}
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Vinnytsia%20Roshen%20Fountain.jpg"
+                        alt="Фонтан Roshen"
+                        class="img-fluid rounded shadow-sm w-100 mb-4"
+                        style="max-height: 380px; object-fit: cover;"
+                    >
+                {% endif %}
+
+                {% if title == "Історія Вінниці" %}
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Vinnytsia%20Jesuit%20monastery%201.jpg"
+                        alt="Історичні Мури Вінниці"
+                        class="img-fluid rounded shadow-sm w-100 mb-4"
+                        style="max-height: 380px; object-fit: cover;"
+                    >
+                {% endif %}
+
+                {% if title == "Історичні фотографії Вінниці" %}
+
+                    <h4 class="mb-3">Фотогалерея міста</h4>
+
+                    <div class="row g-4 mb-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img
+                                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Vinnytsia%20Jesuit%20monastery%201.jpg"
+                                    class="card-img-top"
+                                    alt="Вінницькі Мури"
+                                    style="height: 250px; object-fit: cover;"
+                                >
+                                <div class="card-body">
+                                    <h5 class="card-title">Вінницькі Мури</h5>
+                                    <p class="card-text">
+                                        Історичний комплекс оборонних споруд.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img
+                                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Pirogov%20vinnytsya.JPG"
+                                    class="card-img-top"
+                                    alt="Садиба Пирогова"
+                                    style="height: 250px; object-fit: cover;"
+                                >
+                                <div class="card-body">
+                                    <h5 class="card-title">Садиба Пирогова</h5>
+                                    <p class="card-text">
+                                        Музей-садиба видатного хірурга.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img
+                                    src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=900"
+                                    class="card-img-top"
+                                    alt="Міський краєвид"
+                                    style="height: 250px; object-fit: cover;"
+                                >
+                                <div class="card-body">
+                                    <h5 class="card-title">Міська архітектура</h5>
+                                    <p class="card-text">
+                                        Міські вулиці та архітектурні споруди.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img
+                                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Vinnytsia%20Sadyba%20Pyrohova%20SAM%201406.JPG"
+                                    class="card-img-top"
+                                    alt="Музей Пирогова"
+                                    style="height: 250px; object-fit: cover;"
+                                >
+                                <div class="card-body">
+                                    <h5 class="card-title">Музей Пирогова</h5>
+                                    <p class="card-text">
+                                        Історична пам'ятка Вінниці.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                {% endif %}
+
+                {% if title == "Відомі люди, пов'язані з Вінницею" %}
+
+                    <h4 class="mb-3">Видатні особистості</h4>
+
+                    <div class="row g-4 mb-4">
+
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img
+                                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Mykhailo_Kotsiubynsky.jpg"
+                                    class="card-img-top"
+                                    alt="Михайло Коцюбинський"
+                                    style="height: 280px; object-fit: cover;"
+                                >
+                                <div class="card-body">
+                                    <h5 class="card-title">Михайло Коцюбинський</h5>
+                                    <p class="card-text">
+                                        Видатний український письменник,
+                                        народився у Вінниці.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img
+                                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Nikolay_Pirogov.jpg"
+                                    class="card-img-top"
+                                    alt="Микола Пирогов"
+                                    style="height: 280px; object-fit: cover;"
+                                >
+                                <div class="card-body">
+                                    <h5 class="card-title">Микола Пирогов</h5>
+                                    <p class="card-text">
+                                        Видатний хірург і науковець,
+                                        діяльність якого пов'язана з Вінницею.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                {% endif %}
+
+                <hr>
+
+                <h4 class="mb-3">Інформація</h4>
+
+                <ul class="list-group list-group-flush mb-4">
+                    {% for item in items %}
+                        <li class="list-group-item py-3">
+                            {{ item }}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                {% if links %}
+                    <h4 class="mb-3">Корисні посилання</h4>
+
+                    <div class="list-group mb-4">
+                        {% for link in links %}
+                            <a
+                                href="{{ link.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="list-group-item list-group-item-action"
+                            >
+                                {{ link.title }} ↗
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if title == "Історія Вінниці" %}
+                    <h4 class="mb-3">Інші розділи історії</h4>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <a
+                            href="{% url 'history_people' %}"
+                            class="btn btn-outline-primary"
+                        >
+                            Відомі люди
+                        </a>
+
+                        <a
+                            href="{% url 'history_photos' %}"
+                            class="btn btn-outline-primary"
+                        >
+                            Історичні фотографії
+                        </a>
+                    </div>
+                {% endif %}
+
+                {% if title == "Відомі люди, пов'язані з Вінницею" or title == "Історичні фотографії Вінниці" %}
+                    <a
+                        href="{% url 'history' %}"
+                        class="btn btn-outline-primary mt-3"
+                    >
+                        ← Назад до історії Вінниці
+                    </a>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
