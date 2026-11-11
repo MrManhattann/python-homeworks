@@ -1,0 +1,126 @@
+
+{% extends "main/base.html" %}
+
+{% block title %}Калькулятор трьох чисел{% endblock %}
+
+{% block content %}
+
+<div class="card content-card shadow-sm">
+    <div class="card-body p-4 p-md-5">
+
+        <h1 class="page-title mb-3">Калькулятор трьох чисел</h1>
+
+        <p class="text-muted mb-4">
+            Введіть три числа та виберіть потрібну операцію.
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="row g-3 mb-4">
+
+                <div class="col-md-4">
+                    <label for="number1" class="form-label">Перше число</label>
+                    <input
+                        type="number"
+                        step="any"
+                        name="number1"
+                        id="number1"
+                        class="form-control"
+                        required
+                    >
+                </div>
+
+                <div class="col-md-4">
+                    <label for="number2" class="form-label">Друге число</label>
+                    <input
+                        type="number"
+                        step="any"
+                        name="number2"
+                        id="number2"
+                        class="form-control"
+                        required
+                    >
+                </div>
+
+                <div class="col-md-4">
+                    <label for="number3" class="form-label">Третє число</label>
+                    <input
+                        type="number"
+                        step="any"
+                        name="number3"
+                        id="number3"
+                        class="form-control"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <h5 class="mb-3">Виберіть операцію:</h5>
+
+            <div class="form-check mb-2">
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="operation"
+                    id="min"
+                    value="min"
+                    required
+                >
+                <label class="form-check-label" for="min">
+                    Мінімум із трьох
+                </label>
+            </div>
+
+            <div class="form-check mb-2">
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="operation"
+                    id="max"
+                    value="max"
+                >
+                <label class="form-check-label" for="max">
+                    Максимум із трьох
+                </label>
+            </div>
+
+            <div class="form-check mb-4">
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="operation"
+                    id="average"
+                    value="average"
+                >
+                <label class="form-check-label" for="average">
+                    Середнє арифметичне
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Обчислити
+            </button>
+
+        </form>
+
+        {% if result != None %}
+            <div class="alert alert-success mt-4">
+                <h5>Результат обчислення</h5>
+                <p class="mb-0">
+                    {{ operation_name }}: <strong>{{ result }}</strong>
+                </p>
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="alert alert-danger mt-4">
+                {{ error }}
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+
+{% extends "main/base.html" %}
+
+{% block title %}День програміста{% endblock %}
+
+{% block content %}
+
+<div class="card content-card shadow-sm">
+    <div class="card-body p-4 p-md-5">
+
+        <h1 class="page-title mb-3">День програміста</h1>
+
+        <p class="text-muted mb-4">
+            Введіть рік, щоб дізнатися дату святкування Дня програміста.
+            Це 256-й день року.
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="mb-4">
+                <label for="year" class="form-label">
+                    Введіть рік
+                </label>
+
+                <input
+                    type="number"
+                    name="year"
+                    id="year"
+                    class="form-control"
+                    min="1"
+                    max="9999"
+                    placeholder="Наприклад, 2021"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Знайти дату
+            </button>
+        </form>
+
+        {% if result %}
+            <div class="alert alert-success mt-4">
+                <h5>Результат для {{ year }} року:</h5>
+                <h3 class="mb-0">{{ result }}</h3>
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="alert alert-danger mt-4">
+                {{ error }}
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
