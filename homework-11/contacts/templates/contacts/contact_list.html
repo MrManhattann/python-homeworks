@@ -1,0 +1,119 @@
+{% extends 'contacts/base.html' %}
+
+{% block title %}Мої контакти{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="fw-bold">Мої контакти</h1>
+        <p class="text-muted mb-0">
+            Усі збережені контакти у телефонній книзі
+        </p>
+    </div>
+
+    <a href="{% url 'contact_create' %}" class="btn btn-primary">
+        + Новий контакт
+    </a>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <form method="GET" action="{% url 'contact_list' %}">
+            <div class="input-group">
+                <input
+                    type="text"
+                    name="q"
+                    class="form-control"
+                    placeholder="Пошук за ім'ям або прізвищем..."
+                    value="{{ query }}"
+                >
+
+                <button class="btn btn-primary" type="submit">
+                    Знайти
+                </button>
+
+                {% if query %}
+                    <a href="{% url 'contact_list' %}"
+                       class="btn btn-outline-secondary">
+                        Очистити
+                    </a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% if query %}
+    <p class="text-muted">
+        Результати пошуку за запитом: <strong>{{ query }}</strong>
+    </p>
+{% endif %}
+
+<div class="row g-3">
+
+    {% for contact in contacts %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card contact-card shadow-sm h-100">
+                <div class="card-body">
+
+                    <h5 class="card-title fw-bold">
+                        {{ contact.first_name }} {{ contact.last_name }}
+                    </h5>
+
+                    <p class="mb-2">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:{{ contact.email }}">
+                            {{ contact.email }}
+                        </a>
+                    </p>
+
+                    <p class="mb-2">
+                        <strong>Телефон:</strong><br>
+                        <a href="tel:{{ contact.phone }}">
+                            {{ contact.phone }}
+                        </a>
+                    </p>
+
+                    {% if contact.notes %}
+                        <p class="mb-3">
+                            <strong>Примітки:</strong><br>
+                            {{ contact.notes|linebreaksbr }}
+                        </p>
+                    {% endif %}
+
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="{% url 'contact_update' contact.pk %}"
+                           class="btn btn-warning btn-sm">
+                            Редагувати
+                        </a>
+
+                        <a href="{% url 'contact_delete' contact.pk %}"
+                           class="btn btn-danger btn-sm">
+                            Видалити
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                {% if query %}
+                    За вашим запитом контактів не знайдено.
+                {% else %}
+                    Контактів поки немає. Додайте перший контакт!
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+<div class="mt-4 text-muted">
+    Усього знайдено контактів: <strong>{{ contacts|length }}</strong>
+</div>
+
+{% endblock %}
